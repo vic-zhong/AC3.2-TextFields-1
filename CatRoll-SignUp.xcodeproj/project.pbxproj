@@ -1,0 +1,449 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1405D7261D9D79C1008D494A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D7251D9D79C1008D494A /* AppDelegate.swift */; };
+		1405D72B1D9D79C1008D494A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405D7291D9D79C1008D494A /* Main.storyboard */; };
+		1405D72D1D9D79C1008D494A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1405D72C1D9D79C1008D494A /* Assets.xcassets */; };
+		1405D7301D9D79C1008D494A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1405D72E1D9D79C1008D494A /* LaunchScreen.storyboard */; };
+		1405D73B1D9D79C1008D494A /* CatRoll_SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D73A1D9D79C1008D494A /* CatRoll_SignUpTests.swift */; };
+		1405D7471D9D8D2E008D494A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D7461D9D8D2E008D494A /* LoginViewController.swift */; };
+		1405D74A1D9D8D4B008D494A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D7491D9D8D4B008D494A /* SignUpViewController.swift */; };
+		1405D74C1D9D949D008D494A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D74B1D9D949D008D494A /* MainViewController.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		1405D7371D9D79C1008D494A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 1405D71A1D9D79C1008D494A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 1405D7211D9D79C1008D494A;
+			remoteInfo = "CatRoll-SignUp";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		1405D7221D9D79C1008D494A /* CatRoll-SignUp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CatRoll-SignUp.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1405D7251D9D79C1008D494A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		1405D72A1D9D79C1008D494A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		1405D72C1D9D79C1008D494A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		1405D72F1D9D79C1008D494A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1405D7311D9D79C1008D494A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1405D7361D9D79C1008D494A /* CatRoll-SignUpTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CatRoll-SignUpTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		1405D73A1D9D79C1008D494A /* CatRoll_SignUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatRoll_SignUpTests.swift; sourceTree = "<group>"; };
+		1405D73C1D9D79C1008D494A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1405D7461D9D8D2E008D494A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
+		1405D7491D9D8D4B008D494A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = "View Controllers/SignUpViewController.swift"; sourceTree = "<group>"; };
+		1405D74B1D9D949D008D494A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "View Controllers/MainViewController.swift"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		1405D71F1D9D79C1008D494A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1405D7331D9D79C1008D494A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		1405D7191D9D79C1008D494A = {
+			isa = PBXGroup;
+			children = (
+				1405D7241D9D79C1008D494A /* CatRoll-SignUp */,
+				1405D7391D9D79C1008D494A /* CatRoll-SignUpTests */,
+				1405D7231D9D79C1008D494A /* Products */,
+			);
+			indentWidth = 4;
+			sourceTree = "<group>";
+			tabWidth = 4;
+		};
+		1405D7231D9D79C1008D494A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				1405D7221D9D79C1008D494A /* CatRoll-SignUp.app */,
+				1405D7361D9D79C1008D494A /* CatRoll-SignUpTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		1405D7241D9D79C1008D494A /* CatRoll-SignUp */ = {
+			isa = PBXGroup;
+			children = (
+				1405D7251D9D79C1008D494A /* AppDelegate.swift */,
+				1405D7481D9D8D32008D494A /* View Controllers */,
+				1405D7451D9D8D0C008D494A /* Supporting Files */,
+			);
+			path = "CatRoll-SignUp";
+			sourceTree = "<group>";
+		};
+		1405D7391D9D79C1008D494A /* CatRoll-SignUpTests */ = {
+			isa = PBXGroup;
+			children = (
+				1405D73A1D9D79C1008D494A /* CatRoll_SignUpTests.swift */,
+				1405D73C1D9D79C1008D494A /* Info.plist */,
+			);
+			path = "CatRoll-SignUpTests";
+			sourceTree = "<group>";
+		};
+		1405D7451D9D8D0C008D494A /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				1405D7291D9D79C1008D494A /* Main.storyboard */,
+				1405D72C1D9D79C1008D494A /* Assets.xcassets */,
+				1405D72E1D9D79C1008D494A /* LaunchScreen.storyboard */,
+				1405D7311D9D79C1008D494A /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1405D7481D9D8D32008D494A /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				1405D74B1D9D949D008D494A /* MainViewController.swift */,
+				1405D7461D9D8D2E008D494A /* LoginViewController.swift */,
+				1405D7491D9D8D4B008D494A /* SignUpViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		1405D7211D9D79C1008D494A /* CatRoll-SignUp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1405D73F1D9D79C1008D494A /* Build configuration list for PBXNativeTarget "CatRoll-SignUp" */;
+			buildPhases = (
+				1405D71E1D9D79C1008D494A /* Sources */,
+				1405D71F1D9D79C1008D494A /* Frameworks */,
+				1405D7201D9D79C1008D494A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CatRoll-SignUp";
+			productName = "CatRoll-SignUp";
+			productReference = 1405D7221D9D79C1008D494A /* CatRoll-SignUp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		1405D7351D9D79C1008D494A /* CatRoll-SignUpTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1405D7421D9D79C1008D494A /* Build configuration list for PBXNativeTarget "CatRoll-SignUpTests" */;
+			buildPhases = (
+				1405D7321D9D79C1008D494A /* Sources */,
+				1405D7331D9D79C1008D494A /* Frameworks */,
+				1405D7341D9D79C1008D494A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1405D7381D9D79C1008D494A /* PBXTargetDependency */,
+			);
+			name = "CatRoll-SignUpTests";
+			productName = "CatRoll-SignUpTests";
+			productReference = 1405D7361D9D79C1008D494A /* CatRoll-SignUpTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		1405D71A1D9D79C1008D494A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = C4Q;
+				TargetAttributes = {
+					1405D7211D9D79C1008D494A = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+					};
+					1405D7351D9D79C1008D494A = {
+						CreatedOnToolsVersion = 8.0;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 1405D7211D9D79C1008D494A;
+					};
+				};
+			};
+			buildConfigurationList = 1405D71D1D9D79C1008D494A /* Build configuration list for PBXProject "CatRoll-SignUp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 1405D7191D9D79C1008D494A;
+			productRefGroup = 1405D7231D9D79C1008D494A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				1405D7211D9D79C1008D494A /* CatRoll-SignUp */,
+				1405D7351D9D79C1008D494A /* CatRoll-SignUpTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		1405D7201D9D79C1008D494A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1405D7301D9D79C1008D494A /* LaunchScreen.storyboard in Resources */,
+				1405D72D1D9D79C1008D494A /* Assets.xcassets in Resources */,
+				1405D72B1D9D79C1008D494A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1405D7341D9D79C1008D494A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		1405D71E1D9D79C1008D494A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1405D74A1D9D8D4B008D494A /* SignUpViewController.swift in Sources */,
+				1405D7471D9D8D2E008D494A /* LoginViewController.swift in Sources */,
+				1405D7261D9D79C1008D494A /* AppDelegate.swift in Sources */,
+				1405D74C1D9D949D008D494A /* MainViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1405D7321D9D79C1008D494A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1405D73B1D9D79C1008D494A /* CatRoll_SignUpTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1405D7381D9D79C1008D494A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 1405D7211D9D79C1008D494A /* CatRoll-SignUp */;
+			targetProxy = 1405D7371D9D79C1008D494A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		1405D7291D9D79C1008D494A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1405D72A1D9D79C1008D494A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		1405D72E1D9D79C1008D494A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1405D72F1D9D79C1008D494A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		1405D73D1D9D79C1008D494A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		1405D73E1D9D79C1008D494A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		1405D7401D9D79C1008D494A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "CatRoll-SignUp/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.AccessCode.CatRoll-SignUp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		1405D7411D9D79C1008D494A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "CatRoll-SignUp/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.AccessCode.CatRoll-SignUp";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		1405D7431D9D79C1008D494A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "CatRoll-SignUpTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.AccessCode.CatRoll-SignUpTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatRoll-SignUp.app/CatRoll-SignUp";
+			};
+			name = Debug;
+		};
+		1405D7441D9D79C1008D494A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = "CatRoll-SignUpTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "nyc.AccessCode.CatRoll-SignUpTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CatRoll-SignUp.app/CatRoll-SignUp";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1405D71D1D9D79C1008D494A /* Build configuration list for PBXProject "CatRoll-SignUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1405D73D1D9D79C1008D494A /* Debug */,
+				1405D73E1D9D79C1008D494A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1405D73F1D9D79C1008D494A /* Build configuration list for PBXNativeTarget "CatRoll-SignUp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1405D7401D9D79C1008D494A /* Debug */,
+				1405D7411D9D79C1008D494A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1405D7421D9D79C1008D494A /* Build configuration list for PBXNativeTarget "CatRoll-SignUpTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1405D7431D9D79C1008D494A /* Debug */,
+				1405D7441D9D79C1008D494A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 1405D71A1D9D79C1008D494A /* Project object */;
+}
