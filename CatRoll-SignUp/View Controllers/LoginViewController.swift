@@ -33,7 +33,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     
     // MARK: - UITextFieldDelegate
+    
+    // we can take a look and get a general sense of what happens, when
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        // the .debugId property is defined in an extension, it's not actually part of UITextField
         print("\n + \(textField.debugId) SHOULD BEGIN")
         return true
     }
