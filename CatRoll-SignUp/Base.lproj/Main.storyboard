@@ -92,7 +92,7 @@
                                 <accessibility key="accessibilityConfiguration" label="Name Text Label"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next" enablesReturnKeyAutomatically="YES"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" returnKeyType="next"/>
                                 <connections>
                                     <outlet property="delegate" destination="Pw4-ny-gcK" id="2AB-lN-sZr"/>
                                 </connections>
@@ -101,7 +101,7 @@
                                 <accessibility key="accessibilityConfiguration" label="Email Text Field"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Pw4-ny-gcK" id="kBo-ZX-bnw"/>
                                 </connections>
@@ -112,9 +112,7 @@
                                 <color key="textColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyx-a6-shk">
-                                <frame key="frameInset" minX="137" minY="281" width="103" height="22"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zyx-a6-shk">
                                 <state key="normal" title="Log in!"/>
                                 <connections>
                                     <action selector="didTapLogin:" destination="Pw4-ny-gcK" eventType="touchUpInside" id="Yc7-G3-Wb7"/>
@@ -133,8 +131,12 @@
                             <constraint firstItem="IjF-Wi-LSX" firstAttribute="leading" secondItem="se5-Ig-dI9" secondAttribute="leadingMargin" constant="8" id="MSj-Aq-9S4"/>
                             <constraint firstItem="dF5-rV-kzk" firstAttribute="top" secondItem="xl6-VD-czT" secondAttribute="bottom" constant="8" id="OY9-7D-gl4"/>
                             <constraint firstItem="xl6-VD-czT" firstAttribute="leading" secondItem="se5-Ig-dI9" secondAttribute="leadingMargin" constant="8" id="UIZ-h2-gwP"/>
+                            <constraint firstItem="zyx-a6-shk" firstAttribute="centerX" secondItem="se5-Ig-dI9" secondAttribute="centerX" id="Zdp-LA-Ezd"/>
+                            <constraint firstItem="zyx-a6-shk" firstAttribute="top" secondItem="9TV-Fa-19U" secondAttribute="bottom" constant="8" id="bWI-89-qNg"/>
                             <constraint firstItem="rNf-nn-LN1" firstAttribute="top" secondItem="IjF-Wi-LSX" secondAttribute="bottom" constant="8" id="bfI-Du-aal"/>
                             <constraint firstItem="xl6-VD-czT" firstAttribute="top" secondItem="rNf-nn-LN1" secondAttribute="bottom" constant="24" id="f7S-Q0-KuH"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="9TV-Fa-19U" secondAttribute="trailing" constant="8" id="lhP-1V-tH1"/>
+                            <constraint firstItem="9TV-Fa-19U" firstAttribute="leading" secondItem="se5-Ig-dI9" secondAttribute="leadingMargin" constant="8" id="tGl-DC-tXu"/>
                             <constraint firstItem="xl6-VD-czT" firstAttribute="trailing" secondItem="se5-Ig-dI9" secondAttribute="trailingMargin" constant="8" id="w8r-oo-Q4J"/>
                             <constraint firstItem="IjF-Wi-LSX" firstAttribute="top" secondItem="cp7-r4-GNR" secondAttribute="bottom" constant="8" id="x7b-p0-fwM"/>
                         </constraints>
