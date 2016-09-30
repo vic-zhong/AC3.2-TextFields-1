@@ -83,7 +83,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl6-VD-czT">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Password" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xl6-VD-czT">
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -97,11 +97,11 @@
                                     <outlet property="delegate" destination="Pw4-ny-gcK" id="2AB-lN-sZr"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="email address" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dF5-rV-kzk">
-                                <accessibility key="accessibilityConfiguration" label="Email Text Field"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="bezel" placeholder="password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dF5-rV-kzk">
+                                <accessibility key="accessibilityConfiguration" label="password Text Field"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="24"/>
-                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="done" secureTextEntry="YES"/>
+                                <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="done" secureTextEntry="YES"/>
                                 <connections>
                                     <outlet property="delegate" destination="Pw4-ny-gcK" id="kBo-ZX-bnw"/>
                                 </connections>
@@ -142,9 +142,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="emailTextField" destination="dF5-rV-kzk" id="b8y-Lk-yXH"/>
                         <outlet property="errorLabel" destination="9TV-Fa-19U" id="bje-lm-jVy"/>
                         <outlet property="nameTextField" destination="rNf-nn-LN1" id="1nf-Vq-0AN"/>
+                        <outlet property="passwordTextField" destination="dF5-rV-kzk" id="b8y-Lk-yXH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nSA-BG-XYb" userLabel="First Responder" sceneMemberID="firstResponder"/>

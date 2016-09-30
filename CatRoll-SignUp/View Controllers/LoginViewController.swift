@@ -11,7 +11,7 @@ import UIKit
 class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
-    @IBOutlet weak var emailTextField: UITextField!
+    @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
     
     
@@ -36,10 +36,10 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textFieldsAreValid() -> Bool {
         
         // 1. some set up
-        let textFields: [UITextField] = [self.nameTextField, self.emailTextField]
+        let textFields: [UITextField] = [self.nameTextField, self.passwordTextField]
         let minimumLengthRequireMents: [UITextField : Int] = [
             self.nameTextField : 1,
-            self.emailTextField : 6
+            self.passwordTextField : 6
         ]
             
         
@@ -85,6 +85,12 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return false
     }
     
+    func string(_ string: String, containsOnly characterSet: CharacterSet) -> Bool {
+        if let _ = string.rangeOfCharacter(from: characterSet.inverted) {
+            return false
+        }
+        return true
+    }
     
     // MARK: - UITextFieldDelegate
     
@@ -118,7 +124,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
-        
+        if textField == self.nameTextField && string != "" {
+            return self.string(string, containsOnly: CharacterSet.letters)
+        }
         
         return true
     }
