@@ -8,7 +8,7 @@
 
 import UIKit
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var emailTextField: UITextField!
@@ -25,19 +25,34 @@ class LoginViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     @IBAction func didTapLogin(_ sender: UIButton) {
         print("did tap button")
+    }
+    
+    
+    // MARK: - UITextFieldDelegate
+    func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        print("\n + \(textField.debugId) SHOULD BEGIN")
+        return true
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        print("\n + \(textField.debugId) DID BEGIN")
+    }
+    
+    func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
+        print("\n - \(textField.debugId) SHOULD END")
+        return true
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        print("\n - \(textField.debugId) DID END")
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("\n ~ \(textField.debugId) SHOULD RETURN")
+        return true
     }
 }
