@@ -69,7 +69,7 @@
         <!--Login-->
         <scene sceneID="dEt-13-Xij">
             <objects>
-                <viewController title="Login" id="Pw4-ny-gcK" customClass="LoginViewController" customModule="CatRoll_SignUp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="loginViewController" title="Login" id="Pw4-ny-gcK" customClass="LoginViewController" customModule="CatRoll_SignUp" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cp7-r4-GNR"/>
                         <viewControllerLayoutGuide type="bottom" id="Yif-fh-OFz"/>
