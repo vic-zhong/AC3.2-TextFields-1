@@ -291,6 +291,19 @@ Now with that in place, let's update `shouldChangeCharacters`:
 
 Run your project and test your validation method. You should now only be able to type letters in the name text field. Trying to type a number should result in nothing appearing. The last part of this is to alert the user to the error. Go ahead and update the `errorLabel` with some text to let the user know the error (and also be sure to clear the label when a valid character is typed!)
 
+To help you out, use this function to update your `errorLabel` (and replace where appropriate in your code)
+```swift 
+      func updateErrorLabel(with message: String) {
+        if self.errorLabel.isHidden {
+            self.errorLabel.isHidden = false
+        }
+        
+        self.errorLabel.text = message
+        self.errorLabel.textColor = UIColor.red
+        self.errorLabel.backgroundColor = UIColor.red.withAlphaComponent(0.25)
+    }
+```
+
 ---
 ### 5. Exercise 
 

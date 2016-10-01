@@ -50,12 +50,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             if !self.textField(textField, hasMinimumCharacters: minimumLengthRequireMents[textField]!) {
                 
                 // 4. make sure that the label isn't hidden
-                if self.errorLabel.isHidden {
-                    self.errorLabel.isHidden = false
-                }
-                
                 // 5. display an error to rhe user
-                self.errorLabel.text = "\(textField.debugId) does not meet the minimum character count of \(minimumLengthRequireMents[textField]! as Int)"
+                let errorText = "\(textField.debugId) does not meet the minimum character count of \(minimumLengthRequireMents[textField]! as Int)"
+                self.updateErrorLabel(with: errorText)
                 
                 // 6. indicate that the fields are not valid
                 return false
@@ -63,9 +60,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
 
         // 3. hide the error label if all gets validated
-        if !self.errorLabel.isHidden {
-            self.errorLabel.isHidden = true
-        }
+        self.updateErrorLabel(with: "")
         
         // 4. indicate that the fields are valid
         return true
@@ -90,6 +85,17 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             return false
         }
         return true
+    }
+    
+    // MARK: - UI Helper
+    func updateErrorLabel(with message: String) {
+        if self.errorLabel.isHidden {
+            self.errorLabel.isHidden = false
+        }
+        
+        self.errorLabel.text = message
+        self.errorLabel.textColor = UIColor.red
+        self.errorLabel.backgroundColor = UIColor.red.withAlphaComponent(0.25)
     }
     
     // MARK: - UITextFieldDelegate
@@ -125,7 +131,13 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if textField == self.nameTextField && string != "" {
-            return self.string(string, containsOnly: CharacterSet.letters)
+            let validString: Bool = self.string(string, containsOnly: CharacterSet.letters)
+            
+            if !validString {
+                self.updateErrorLabel(with: "\(textField.debugId) can only contain alphanumeric characters")
+            }
+            
+            return validString
         }
         
         return true
