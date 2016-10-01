@@ -32,6 +32,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         print("Textfields are valid: \(textFieldsAreValid())")
     }
     
+    
     // MARK: - Validations
     func textFieldsAreValid() -> Bool {
         
@@ -42,178 +43,73 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.passwordTextField : 6
         ]
         
-        guard
-            let nameString: String = self.nameTextField.text,
-            let passwordString: String = self.passwordTextField.text
-            else {
-                return false
-        }
-        
-        guard
-            !nameString.isEmpty,
-            !passwordString.isEmpty
-            else {
-                self.updateErrorLabel(with: "Must not leave any fields blank")
-                return false
-        }
-        
-        guard self.twoNamesArePresent(in: nameString) else {
-            self.updateErrorLabel(with: "Name Field Must Contain At Least 2 Names (First, Family)")
-            return false
-        }
-        guard self.passwordContainsAtLeastOneCapitalizedLetter(passwordString) else {
-            self.updateErrorLabel(with: "Password Must Contain At Least One Capitalized Letter")
-            return false
-        }
-        guard self.passwordContainsAtLeastOneNumber(passwordString) else {
-            self.updateErrorLabel(with: "Password Must Contain At Least One Number")
-            return false
-        }
-        
+
         // 2. iterrate over the text fields
-        for textField in textFields {
-            // 3. if the textfield doesn't have the minimum required characters...
-            let minimumCharReq: Bool = self.textField(textField, hasMinimumCharacters: minimumLengthRequireMents[textField]!)
-            if !minimumCharReq {
-                
-                // 4. make sure that the label isn't hidden
-                // 5. display an error to rhe user
-                let errorText = "\(textField.debugId) does not meet the minimum character count of \(minimumLengthRequireMents[textField]! as Int)"
-                self.updateErrorLabel(with: errorText)
-                
-                // 6. indicate that the fields are not valid
-                return false
-            }
-        }
+
+        // 3. if the textfield doesn't have the minimum required characters...
+
+        // 4. make sure that the label isn't hidden
+        
+        // 5. display an error to rhe user
+
+        // 6. indicate that the fields are not valid
         
         
-        // 3. hide the error label if all gets validated
-        self.updateErrorLabel(with: "")
+        // 7. hide the error label if all gets validated
         
-        // 4. indicate that the fields are valid
+        // 8. indicate that the fields are valid
         return true
     }
     
     func textField(_ textField: UITextField, hasMinimumCharacters minimum: Int) -> Bool {
-        
-        guard let currentText: String = textField.text else {
-            return false
-        }
-        
-        
-        if currentText.characters.count >= minimum {
-            return true
-        }
-        
+        // fill in code
         return false
     }
     
     func string(_ string: String, containsOnly characterSet: CharacterSet) -> Bool {
-        if let _ = string.rangeOfCharacter(from: characterSet.inverted) {
-            return false
-        }
+        // fill in code
         return true
-    }
-    
-    
-    // MARK: - Exercise Functions
-    func twoNamesArePresent(in string: String) -> Bool {
-        let validNameCharacters: CharacterSet = CharacterSet.letters.union(CharacterSet.punctuationCharacters)
-        
-        let components: [String] = string.trimmingCharacters(in: CharacterSet.whitespaces)
-            .components(separatedBy: CharacterSet.whitespaces)
-        
-        guard components.count >= 2 else {
-            return false
-        }
-        
-        for component in components {
-            guard
-                component.characters.count > 1,
-                self.string(component, containsOnly: validNameCharacters)
-                else {
-                    return false
-            }
-        }
-        
-        return true
-    }
-    
-    func passwordContainsAtLeastOneNumber(_ string: String) -> Bool {
-        if let _ = string.rangeOfCharacter(from: CharacterSet.decimalDigits) {
-            return true
-        }
-        
-        return false
-    }
-    
-    func passwordContainsAtLeastOneCapitalizedLetter(_ string: String) -> Bool {
-        if let _ = string.rangeOfCharacter(from: CharacterSet.uppercaseLetters) {
-            return true
-        }
-        
-        return false
     }
     
     
     // MARK: - UI Helper
-    func updateErrorLabel(with message: String) {
-        if self.errorLabel.isHidden {
-            self.errorLabel.isHidden = false
-        }
-        
-        self.errorLabel.text = message
-        self.errorLabel.textColor = UIColor.red
-        self.errorLabel.backgroundColor = UIColor.red.withAlphaComponent(0.25)
-    }
+    // (add the label update function here)
     
     
     // MARK: - UITextFieldDelegate
     
     // we can take a look and get a general sense of what happens, when
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
+        
         // the .debugId property is defined in an extension, it's not actually part of UITextField
-        //        print("\n + \(textField.debugId) SHOULD BEGIN")
+        print("\n + \(textField.debugId) SHOULD BEGIN")
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        //        print("\n + \(textField.debugId) DID BEGIN")
+        print("\n + \(textField.debugId) DID BEGIN")
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-        //        print("\n - \(textField.debugId) SHOULD END")
+        print("\n - \(textField.debugId) SHOULD END")
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-        //        print("\n - \(textField.debugId) DID END")
+        print("\n - \(textField.debugId) DID END")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("\n ~ \(textField.debugId) SHOULD RETURN")
-        
-        _ = self.textFieldsAreValid()
-        
         return true
     }
     
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
+        // only interested in doing this validation for self.nameTextField
+        // and per documentation, string can be empty if the change is a deletion
         if textField == self.nameTextField && string != "" {
-            let validString: Bool = self.string(string, containsOnly: CharacterSet.letters.union(CharacterSet.punctuationCharacters).union(CharacterSet.whitespaces))
-            
-            if !validString {
-                self.updateErrorLabel(with: "\(textField.debugId) can only contain letters, punctuation or spaces")
-            }
-            
-            return validString
-        } else if textField == self.passwordTextField && string != "" {
-            let validString: Bool = self.string(string, containsOnly: CharacterSet.alphanumerics)
-            
-            if !validString {
-                self.updateErrorLabel(with: "\(textField.debugId) can only contain alphanumeric characters")
-            }
+            return self.string(string, containsOnly: CharacterSet.letters.union(CharacterSet.whitespaces))
         }
         
         return true

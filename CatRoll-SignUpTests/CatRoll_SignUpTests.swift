@@ -108,6 +108,10 @@ class CatRoll_SignUpTests: XCTestCase {
         let decomposableCharacters: String = "First Ñamè"
         let initialsDecomposable: String = "Ñ È"
         
+        // Delete this line when you're ready for the exercises
+        XCTFail("This test will always fail until you complete the exercises")
+        /* Uncomment for exercises
+ 
         XCTAssertTrue(loginViewController.twoNamesArePresent(in: twoWordsStandard))
         XCTAssertTrue(loginViewController.twoNamesArePresent(in: threeWordsStrandard))
         XCTAssertTrue(loginViewController.twoNamesArePresent(in: hyphenatedName))
@@ -120,6 +124,7 @@ class CatRoll_SignUpTests: XCTestCase {
         XCTAssertFalse(loginViewController.twoNamesArePresent(in: whiteSpaces))
         XCTAssertFalse(loginViewController.twoNamesArePresent(in: initials))
         XCTAssertFalse(loginViewController.twoNamesArePresent(in: initialsDecomposable))
+        */
     }
     
     func testForAtLeastOneNumberInString() {
@@ -132,6 +137,11 @@ class CatRoll_SignUpTests: XCTestCase {
         let emptyString: String = ""
         let whiteSpaceString: String = "      "
         
+        // Delete this line when you're ready for the exercises
+        XCTFail("This test will always fail until you complete the exercises")
+        
+        /* Uncomment for exercises
+         
         XCTAssertTrue(loginViewController.passwordContainsAtLeastOneNumber(oneNumberString))
         XCTAssertTrue(loginViewController.passwordContainsAtLeastOneNumber(multiNumberString))
         XCTAssertTrue(loginViewController.passwordContainsAtLeastOneNumber(mixedAlphaString))
@@ -141,6 +151,7 @@ class CatRoll_SignUpTests: XCTestCase {
         XCTAssertFalse(loginViewController.passwordContainsAtLeastOneNumber(controlCharacterSet))
         XCTAssertFalse(loginViewController.passwordContainsAtLeastOneNumber(emptyString))
         XCTAssertFalse(loginViewController.passwordContainsAtLeastOneNumber(whiteSpaceString))
+        */
     }
     
     func testForAtLeastOneCapitalLetterInString() {
@@ -152,6 +163,12 @@ class CatRoll_SignUpTests: XCTestCase {
         let capitalizedString: String = "First Name"
         let mixedAlphaNumString: String = "F1R57 N4m3"
         
+        
+        // Delete this line when you're ready for the exercises
+        XCTFail("This test will always fail until you complete the exercises")
+        
+        /* Uncomment for exercises
+ 
         XCTAssertTrue(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(oneLetterCapital))
         XCTAssertTrue(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(oneLetterDecomposableCapital))
         XCTAssertTrue(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(capitalizedString))
@@ -160,5 +177,6 @@ class CatRoll_SignUpTests: XCTestCase {
         XCTAssertFalse(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(oneLetterNonCapital))
         XCTAssertFalse(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(oneLetterDecomposableNonCapital))
         XCTAssertFalse(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(lowercasedString))
+         */
     }
 }
