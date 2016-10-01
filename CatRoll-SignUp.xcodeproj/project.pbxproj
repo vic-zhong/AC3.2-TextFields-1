@@ -15,6 +15,7 @@
 		1405D7471D9D8D2E008D494A /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D7461D9D8D2E008D494A /* LoginViewController.swift */; };
 		1405D74A1D9D8D4B008D494A /* SignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D7491D9D8D4B008D494A /* SignUpViewController.swift */; };
 		1405D74C1D9D949D008D494A /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D74B1D9D949D008D494A /* MainViewController.swift */; };
+		1405D74E1D9DA1AA008D494A /* UITextField+AccessCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1405D74D1D9DA1AA008D494A /* UITextField+AccessCode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +41,7 @@
 		1405D7461D9D8D2E008D494A /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = "View Controllers/LoginViewController.swift"; sourceTree = "<group>"; };
 		1405D7491D9D8D4B008D494A /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SignUpViewController.swift; path = "View Controllers/SignUpViewController.swift"; sourceTree = "<group>"; };
 		1405D74B1D9D949D008D494A /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = "View Controllers/MainViewController.swift"; sourceTree = "<group>"; };
+		1405D74D1D9DA1AA008D494A /* UITextField+AccessCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "UITextField+AccessCode.swift"; path = "AC3.2 Helpers/UITextField+AccessCode.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 		1405D7451D9D8D0C008D494A /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				1405D74D1D9DA1AA008D494A /* UITextField+AccessCode.swift */,
 				1405D7291D9D79C1008D494A /* Main.storyboard */,
 				1405D72C1D9D79C1008D494A /* Assets.xcassets */,
 				1405D72E1D9D79C1008D494A /* LaunchScreen.storyboard */,
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1405D74E1D9DA1AA008D494A /* UITextField+AccessCode.swift in Sources */,
 				1405D74A1D9D8D4B008D494A /* SignUpViewController.swift in Sources */,
 				1405D7471D9D8D2E008D494A /* LoginViewController.swift in Sources */,
 				1405D7261D9D79C1008D494A /* AppDelegate.swift in Sources */,
