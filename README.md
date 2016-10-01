@@ -310,6 +310,8 @@ To help you out, use this function to update your `errorLabel` (and replace wher
 ---
 ### 5. Exercise 
 
+> Be sure to go into uncomment the indicated code in `CatRoll_SignUpTests.swift` before beginning the exercises. All of your code should pass the tests in place. Take a look at the tests to know what to name your functions and to guide you on what they should be able to do. 
+
 This is a good start, but we should add a few more validations to our login form: 
 
 1. The name field should have a first _and_ last name. Do a validation to make sure there are at least 2 names in that text field (do our server a favor as well and make sure any leading & trailing white space characters are trimmed)
