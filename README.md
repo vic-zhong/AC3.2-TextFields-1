@@ -283,7 +283,7 @@ Now with that in place, let's update `shouldChangeCharacters`:
         // and per documentation, string can be empty if the change is a deletion
         
         if textField == self.nameTextField && string != "" {
-            return self.string(string, containsOnly: CharacterSet.letters)
+            return self.string(string, containsOnly: CharacterSet.letters.union(CharacterSet.whitespaces))
         }
         
         return true
