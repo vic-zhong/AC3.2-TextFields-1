@@ -7,6 +7,7 @@
 3. [Adding Connections from UI Elements in Storyboard (Action) - Xcode Doc](http://help.apple.com/xcode/mac/8.0/#/dev9662c7670)
 4. [Managing/Checking Outlet Connections - Xcode doc](http://help.apple.com/xcode/mac/8.0/#/devc0cdc8c7a)
 5. [String Manipulation Cheat Sheet - Use Your Loaf](http://useyourloaf.com/blog/swift-string-cheat-sheet/)
+6. [Complete List of Unicode Categories - File Format](http://www.fileformat.info/info/unicode/category/index.htm)
 
 ---
 ### 1. Storyboard Setup
