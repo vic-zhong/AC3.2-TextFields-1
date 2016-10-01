@@ -9,7 +9,7 @@
 import UIKit
 
 class LoginViewController: UIViewController, UITextFieldDelegate {
-
+    
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var errorLabel: UILabel!
@@ -17,16 +17,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
-
+    
+    
     @IBAction func didTapLogin(_ sender: UIButton) {
         print("did tap button")
         print("Textfields are valid: \(textFieldsAreValid())")
@@ -41,13 +41,40 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             self.nameTextField : 1,
             self.passwordTextField : 6
         ]
-            
+        
+        guard
+            let nameString: String = self.nameTextField.text,
+            let passwordString: String = self.passwordTextField.text
+            else {
+                return false
+        }
+        
+        guard
+            !nameString.isEmpty,
+            !passwordString.isEmpty
+            else {
+                self.updateErrorLabel(with: "Must not leave any fields blank")
+                return false
+        }
+        
+        guard self.twoNamesArePresent(in: nameString) else {
+            self.updateErrorLabel(with: "Name Field Must Contain At Least 2 Names (First, Family)")
+            return false
+        }
+        guard self.passwordContainsAtLeastOneCapitalizedLetter(passwordString) else {
+            self.updateErrorLabel(with: "Password Must Contain At Least One Capitalized Letter")
+            return false
+        }
+        guard self.passwordContainsAtLeastOneNumber(passwordString) else {
+            self.updateErrorLabel(with: "Password Must Contain At Least One Number")
+            return false
+        }
         
         // 2. iterrate over the text fields
         for textField in textFields {
-            
             // 3. if the textfield doesn't have the minimum required characters...
-            if !self.textField(textField, hasMinimumCharacters: minimumLengthRequireMents[textField]!) {
+            let minimumCharReq: Bool = self.textField(textField, hasMinimumCharacters: minimumLengthRequireMents[textField]!)
+            if !minimumCharReq {
                 
                 // 4. make sure that the label isn't hidden
                 // 5. display an error to rhe user
@@ -58,7 +85,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 return false
             }
         }
-
+        
+        
         // 3. hide the error label if all gets validated
         self.updateErrorLabel(with: "")
         
@@ -87,6 +115,47 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
+    
+    // MARK: - Exercise Functions
+    func twoNamesArePresent(in string: String) -> Bool {
+        let validNameCharacters: CharacterSet = CharacterSet.letters.union(CharacterSet.punctuationCharacters)
+        
+        let components: [String] = string.trimmingCharacters(in: CharacterSet.whitespaces)
+            .components(separatedBy: CharacterSet.whitespaces)
+        
+        guard components.count >= 2 else {
+            return false
+        }
+        
+        for component in components {
+            guard
+                component.characters.count > 1,
+                self.string(component, containsOnly: validNameCharacters)
+                else {
+                    return false
+            }
+        }
+        
+        return true
+    }
+    
+    func passwordContainsAtLeastOneNumber(_ string: String) -> Bool {
+        if let _ = string.rangeOfCharacter(from: CharacterSet.decimalDigits) {
+            return true
+        }
+        
+        return false
+    }
+    
+    func passwordContainsAtLeastOneCapitalizedLetter(_ string: String) -> Bool {
+        if let _ = string.rangeOfCharacter(from: CharacterSet.uppercaseLetters) {
+            return true
+        }
+        
+        return false
+    }
+    
+    
     // MARK: - UI Helper
     func updateErrorLabel(with message: String) {
         if self.errorLabel.isHidden {
@@ -98,26 +167,27 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         self.errorLabel.backgroundColor = UIColor.red.withAlphaComponent(0.25)
     }
     
+    
     // MARK: - UITextFieldDelegate
     
     // we can take a look and get a general sense of what happens, when
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
         // the .debugId property is defined in an extension, it's not actually part of UITextField
-//        print("\n + \(textField.debugId) SHOULD BEGIN")
+        //        print("\n + \(textField.debugId) SHOULD BEGIN")
         return true
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-//        print("\n + \(textField.debugId) DID BEGIN")
+        //        print("\n + \(textField.debugId) DID BEGIN")
     }
     
     func textFieldShouldEndEditing(_ textField: UITextField) -> Bool {
-//        print("\n - \(textField.debugId) SHOULD END")
+        //        print("\n - \(textField.debugId) SHOULD END")
         return true
     }
     
     func textFieldDidEndEditing(_ textField: UITextField) {
-//        print("\n - \(textField.debugId) DID END")
+        //        print("\n - \(textField.debugId) DID END")
     }
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
@@ -131,13 +201,19 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
         
         if textField == self.nameTextField && string != "" {
-            let validString: Bool = self.string(string, containsOnly: CharacterSet.letters)
+            let validString: Bool = self.string(string, containsOnly: CharacterSet.letters.union(CharacterSet.punctuationCharacters).union(CharacterSet.whitespaces))
+            
+            if !validString {
+                self.updateErrorLabel(with: "\(textField.debugId) can only contain letters, punctuation or spaces")
+            }
+            
+            return validString
+        } else if textField == self.passwordTextField && string != "" {
+            let validString: Bool = self.string(string, containsOnly: CharacterSet.alphanumerics)
             
             if !validString {
                 self.updateErrorLabel(with: "\(textField.debugId) can only contain alphanumeric characters")
             }
-            
-            return validString
         }
         
         return true

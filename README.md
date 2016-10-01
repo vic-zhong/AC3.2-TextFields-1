@@ -311,8 +311,9 @@ To help you out, use this function to update your `errorLabel` (and replace wher
 
 This is a good start, but we should add a few more validations to our login form: 
 
-1. The name field should have a first _and_ last name. Do a validation to make sure there are at least 2 names in that text field.
+1. The name field should have a first _and_ last name. Do a validation to make sure there are at least 2 names in that text field (do our server a favor as well and make sure any leading & trailing white space characters are trimmed)
   2. Tip: This is probably best done using a function you create that's called in `textFieldsAreValid` (there are a number of valid ways to go about this, such as using `split`, `first`, `indexOf`, etc..)
+  3. Tip 2: You will need to update the live validation for the `nameTextField` to allow for more than just `CharacterSet.letters` (use the tests to figure out which character sets you should be allowing). Be sure to update the error message to be accurate as well (`self.updateErrorLabel(with: "\(textField.debugId) can only contain letters, punctuation or spaces")`)
 3. We'd like for passwords to be "strong", so let's make sure that users also include *at least* one number in addition to the 6 character minimum
 4. Ok, this should be *a little* stronger, so make sure there's also at least 1 capitalized letter
 4. Our servers that are going to store a user's name and password are kind of old and don't like non-alphanumeric characters being used. Do a live validation of the password text field to make sure users aren't typing characters other than numbers and letters. 

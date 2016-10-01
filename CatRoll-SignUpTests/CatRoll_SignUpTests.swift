@@ -15,14 +15,11 @@ class CatRoll_SignUpTests: XCTestCase {
     internal let minimum1: Int = 1
     internal let minimum10: Int = 10
     internal let minimum100: Int = 100
-    internal var loginViewController: LoginViewController!
+    internal var loginViewController: LoginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
     
     override func setUp() {
         super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
-        
-        self.loginViewController = UIStoryboard.init(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "loginViewController") as! LoginViewController
-        
+        // Put setup code here. This method is called before the invocation of each test method in the class.        
     }
     
     override func tearDown() {
@@ -79,24 +76,89 @@ class CatRoll_SignUpTests: XCTestCase {
         let lettersCharacterSet: CharacterSet = CharacterSet.letters
         let alphaNumCharacterSet: CharacterSet = CharacterSet.alphanumerics
         let whitespaceCharacterSet: CharacterSet = CharacterSet.whitespaces
+        let decomposableCharacterSet: CharacterSet = CharacterSet.decomposables.union(lettersCharacterSet)
         
         let characterString: String = "LettersString"
         let numberString: String = "1234567890"
         let mixedSring: String = "123Letters456"
         let whiteSpaceString: String = "      "
         let trimmableWhiteSpaceLetters: String = "    Letters"
+        let decomposableCharacters: String = "èñöūæ"
         
         XCTAssertTrue(self.loginViewController.string(characterString, containsOnly: lettersCharacterSet))
-        
         XCTAssertTrue(self.loginViewController.string(numberString, containsOnly: numbersCharacterSet))
-        
         XCTAssertTrue(self.loginViewController.string(mixedSring, containsOnly: alphaNumCharacterSet))
+        XCTAssertTrue(self.loginViewController.string(trimmableWhiteSpaceLetters.trimmingCharacters(in: whitespaceCharacterSet), containsOnly: lettersCharacterSet))
+        XCTAssertTrue(self.loginViewController.string(whiteSpaceString, containsOnly: whitespaceCharacterSet))
+        XCTAssertTrue(self.loginViewController.string(decomposableCharacters, containsOnly: decomposableCharacterSet))
         
         XCTAssertFalse(self.loginViewController.string(trimmableWhiteSpaceLetters, containsOnly: lettersCharacterSet))
+    }
+    
+    func testTwoWordNameMinimum() {
+        let oneWordStandard: String = "First"
+        let twoWordsStandard: String = "First Name"
+        let threeWordsStrandard: String = "First Name Last"
+        let hyphenatedName: String = "First-Name Last"
+        let punctuatedString: String = "First Name Jr."
+        let whiteSpacePadded: String = "   First Name  "
+        let nonAlphaCharacters: String = "782-319 233.153"
+        let whiteSpaces: String = "             "
+        let initials: String = "F N Last"
+        let decomposableCharacters: String = "First Ñamè"
+        let initialsDecomposable: String = "Ñ È"
         
-        XCTAssertTrue(self.loginViewController.string(trimmableWhiteSpaceLetters.trimmingCharacters(in: whitespaceCharacterSet), containsOnly: lettersCharacterSet))
+        XCTAssertTrue(loginViewController.twoNamesArePresent(in: twoWordsStandard))
+        XCTAssertTrue(loginViewController.twoNamesArePresent(in: threeWordsStrandard))
+        XCTAssertTrue(loginViewController.twoNamesArePresent(in: hyphenatedName))
+        XCTAssertTrue(loginViewController.twoNamesArePresent(in: punctuatedString))
+        XCTAssertTrue(loginViewController.twoNamesArePresent(in: whiteSpacePadded))
+        XCTAssertTrue(loginViewController.twoNamesArePresent(in: decomposableCharacters))
         
-        XCTAssertTrue(self.loginViewController.string(whiteSpaceString, containsOnly: whitespaceCharacterSet))
+        XCTAssertFalse(loginViewController.twoNamesArePresent(in: oneWordStandard))
+        XCTAssertFalse(loginViewController.twoNamesArePresent(in: nonAlphaCharacters))
+        XCTAssertFalse(loginViewController.twoNamesArePresent(in: whiteSpaces))
+        XCTAssertFalse(loginViewController.twoNamesArePresent(in: initials))
+        XCTAssertFalse(loginViewController.twoNamesArePresent(in: initialsDecomposable))
+    }
+    
+    func testForAtLeastOneNumberInString() {
+        let oneNumberString: String = "1"
+        let multiNumberString: String = "1234567890"
+        let mixedAlphaString: String = "àbc123ÈFG"
+        let whiteSpacePadded: String = "     1234123    "
+        let mixedCharacterString: String = " $%@asd123"
+        let controlCharacterSet: String = "%&@(*$@(!))"
+        let emptyString: String = ""
+        let whiteSpaceString: String = "      "
         
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneNumber(oneNumberString))
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneNumber(multiNumberString))
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneNumber(mixedAlphaString))
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneNumber(whiteSpacePadded))
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneNumber(mixedCharacterString))
+        
+        XCTAssertFalse(loginViewController.passwordContainsAtLeastOneNumber(controlCharacterSet))
+        XCTAssertFalse(loginViewController.passwordContainsAtLeastOneNumber(emptyString))
+        XCTAssertFalse(loginViewController.passwordContainsAtLeastOneNumber(whiteSpaceString))
+    }
+    
+    func testForAtLeastOneCapitalLetterInString() {
+        let oneLetterNonCapital: String = "a"
+        let oneLetterDecomposableNonCapital: String = "å"
+        let oneLetterCapital: String = "A"
+        let oneLetterDecomposableCapital: String = "Å"
+        let lowercasedString: String = "first name"
+        let capitalizedString: String = "First Name"
+        let mixedAlphaNumString: String = "F1R57 N4m3"
+        
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(oneLetterCapital))
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(oneLetterDecomposableCapital))
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(capitalizedString))
+        XCTAssertTrue(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(mixedAlphaNumString))
+        
+        XCTAssertFalse(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(oneLetterNonCapital))
+        XCTAssertFalse(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(oneLetterDecomposableNonCapital))
+        XCTAssertFalse(loginViewController.passwordContainsAtLeastOneCapitalizedLetter(lowercasedString))
     }
 }
