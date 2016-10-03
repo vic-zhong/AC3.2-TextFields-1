@@ -67,7 +67,15 @@
   37. delegate outlets: Crtl+drag from both textfields to the `LoginViewController`, in the outlets menu that pops up, select `delegate` (this is how you set up delegation through storyboard)
 38. In `LoginViewController.swift`, set the class to be a `UITextFieldDelegate`
   39. All text field delegate functions are optional, so you won't get any warnings/errors
-40. Run the project at this point, it should look like: (screen shots of storyboard and project)
+40. Run the project at this point, it should look like: 
+
+#### Storyboard
+![Login Screen - Storyboard](http://imgur.com/CN44NQxm.jpg)
+![Main Screen - Storyboard](http://imgur.com/cpLNtRtm.jpg)
+
+#### Running in Simulator
+![Login Screen - Simulator](http://imgur.com/yd6l0Rsm.jpg)
+![Main Screen - Simulator](http://imgur.com/BwHMLYbm.jpg)
 
 ---
 ### 2. Text Field Delegation
@@ -211,7 +219,9 @@ Now, let's do some validation in `shouldReturn`:
     }
 ```
 
-You should see something like this, if you type in your name and then a 4-letter password and hit the "Return" key (also make sure that you can see the error if you rmove your name but have a 6 letter pass. What should happen in the current logic if you don't meet either criteria? What will the error label display?): (screenshot of sample error). 
+You should see something like this, if you type in your name and then a 4-letter password and hit the "Return" key (also make sure that you can see the error if you rmove your name but have a 6 letter pass. What should happen in the current logic if you don't meet either criteria? What will the error label display?):
+
+![Sample Error - Pass too Short](http://imgur.com/NGdaCrlm.jpg)
 
 Great that this works, but the validation only gets called on tapping the return key. We'd probably like it if it happened when the user also tapped the `Login` button. Let's create a new function that we can call from anywhere when we'd like to do a final validation of the textFields:
 
@@ -260,8 +270,14 @@ Now with this function in place, we can remove all of our previous code from `sh
 ```
 
 > Swift will likely give you a warning about "Result of call to 'textFieldsAreValid()" is unused. This is because by default, there is a setting in "Build Settings" for projects that automatically generates these warnings. You can silence these in two ways:
+
 1. Add `@discardableResult` just before the `func` keyword of a function or
 2. Assigning the return value to `_` (as in `_ = self.textFieldsAreValid()`)
+
+![Compiler Warning Source](http://imgur.com/WgswdSdl.jpg)
+
+**And as tempting as it might be, you don't want to change this build setting to `No`**
+
 
 ---
 ### 4. Live Validation
