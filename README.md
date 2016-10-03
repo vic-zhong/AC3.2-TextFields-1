@@ -12,13 +12,12 @@
 ---
 ### 1. Storyboard Setup
 
-1. Add three `UIViewController` subclasses: 
+1. You are provided 3 `UIViewController` subclasses in the project already: 
   2. `MainViewController`, `LoginViewController`, `SignupViewController`
-3. Drag in a `UIViewController` into storyboard and embed in a `UINavigationController`
-  4. Change this to be `MainViewController`
+3. In your `Main.storyboard`, there will be a `MainViewController` with `UINavigationController` already embedded
 5. Add two buttons to `MainViewController`
   6. Label them `Login` and `Signup`
-  7. Select both of them, and embed in a `UIStackViewController`
+  7. Select both of them, and embed in a `UIStackViewController` (same as how you would embed in a navigation controller)
   8. With the stack view selected, add 2 constraints: centerY and centerX to place it in the center of the view
 9. Drag in two more view controllers into storyboard
   10. Add a `show` segue with the identifier `loginSegue` from the `Login` button to one of the VC's. Change this VC's class to `LoginViewController`.
