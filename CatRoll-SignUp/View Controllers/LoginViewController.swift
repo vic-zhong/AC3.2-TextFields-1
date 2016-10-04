@@ -25,7 +25,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		super.didReceiveMemoryWarning()
 	}
 	
-	
 	// MARK: - Validations
 	func textFieldsAreValid() -> Bool {
 		
@@ -47,7 +46,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 					errorLabel.isHidden = false
 
 					// 5. display an error to rhe user
-					errorString += "You need at least \(min) characters in your \(element.accessibilityLabel!)!"
+					errorString += "You need at least \(min) characters in your \(element.accessibilityLabel!)! "
 					
 					// 6. indicate that the fields are not valid
 					element.backgroundColor = .red
@@ -61,10 +60,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 			}
 			errorLabel.text = errorString
 		}
-		
-		
-		
-		
 		return true
 	}
 	
@@ -124,7 +119,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 		
 		// this will generate a warning about an unused return variable without the "_ = "
 		_ = self.textFieldsAreValid()
-		
 		return true
 	}
 	
